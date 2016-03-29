@@ -1,0 +1,156 @@
+Original file: 
+
+
+
+Editing With vim 07 - Count Modifiers and Skipping Lines
+https://www.youtube.com/watch?v=T3G2G9Zhr8U&index=7&list=PL13bz4SHGmRxlZVmWQ9DvXo1fEg4UdGkr
+
+
+
+
+
+
+
+
+   I. in Vim CMD mode:
+
+	1. set line number:                                       'set number', OR 'set nu'
+	   unset line number:                                     'set nu!'
+
+
+	2. https://www.youtube.com/watch?v=SI8TeVMX8pk
+
+	   
+	3. to get the last-line mode:                             ':'
+
+	   
+	4. to save and exit:                                      'w'(write) and 'q'(quit)
+
+        
+	>>>>>>>>>>>>>>>>>>>>	to repeat latestly issues cmd:    '.' 
+
+
+	5. to copy the current line:                              'Y' or 'yy' (ie. to yank the current line without deleting it)
+
+           to copy from current line to x lines after 
+		and paste them to the end of file:        'y' + x + 'G' (ie where x stands for the amout of lines)
+
+
+        6. to paste: 
+        	to paste after the current line:                  'p'(lower case)
+		to paste before the current line:                 'P'(upper case)
+
+
+	7. to insert: 
+		to insert at one line below the current location: 'o'(lower case, meaning "open a new line and insert")
+		to insert a new line at the end of file:          'Go'
+	   	to insert at one line above the current location: 'O'(upper case)
+	   	to insert at the end of current line:             'A' (append) 
+           	to insert at the start of current line:           'I'
+
+
+	8. to delete:
+
+	   	to del one char at the current location:                 'x'
+                to del one char left to the current location:            'X'
+
+	   	to del one current word:                                 'dw'
+		to del the next x number of words:                       'd' + x + 'w' (where x stands for the amount)
+
+	   	to del the current line:                                 'dd'
+		to del x amount of lines from the current line:          'd' + x + 'd' (where x stands for the amount)
+
+	   	to del from current position to end of line:             'd$'
+	   	to del from current position to start of line:           'd0' 
+
+		to del from the current position to the start of file:   'dgg'
+		to del from the current position to the end of file:     'dG'
+
+	9. to paste: 
+		to paste before the current position:    'P'(upper case)
+		to paste after the current position:     'p' (lower case)
+
+		to paste x amout of times of yanked contents:  x + 'p' ( lower case for after the current position)
+                                                               x + 'P' ( upper case for before the current position)
+
+	10. to cut and paste:
+    		place the cursor at the position where you want to begin cutting;
+
+   		select characters: 'v'(lower case) + move the cursor to the end of what you want to cut,
+			or uppercase 'V' to select whole lines;
+
+    		press 'd' to cut; 
+
+    		move the cursor to where you would like to paste;
+
+    		press 'P' (upper case) to paste before the cursor, or 'p' (lower case) to paste after. 
+
+
+	11. to copy and paste:
+		place the cursor at the position where you want to begin copying;
+
+		press 'v' to select characters 
+			or uppercase 'V' to select whole lines;
+
+    		move the cursor to the end of what you want to cut;
+
+    		press 'y' to copy;
+			
+    		move the cursor to where you would like to paste;
+
+    		press 'P' (upper case) to paste before the cursor, or 'p' (lower case) to paste after. 
+
+
+	 12. to move: 
+		to left:     'l'
+		to right:    'h'
+		to up:       'k'
+		to down:     'j'
+
+
+	   	to move from one word to another:                 'w'
+		to move to the end of the word:                   'e'
+	   	to move back from one word to another:            'b'
+
+
+           	to end of line:                 '$'
+           	to beginning of line:           '0'
+
+
+           	to top of screen:               'H'
+	   	to mid of screen:               'M'
+	   	to bottom of screen:            'L'
+
+
+	   	to move forward the file:       ctrl + 'f'
+	   	to move backward the file:      ctrl + 'b' 	
+		to move to the top of file:     'gg'
+	   	to move to the bottom of file:  'G'
+	   	to move certain line of file:   number + 'G'
+
+
+	13. to replace(ie.change):
+		to replace the char at the cursor location:                         'r'
+		to replace from the cursor position to some other later position:   'R'
+
+
+	14. to change:
+		to change x amount of words from the current position:    'c' + x + 'w' (where x is the amount)
+
+
+
+   II. @ bash cmd line:
+
+	1. to display the file contents:
+		to display the contents of one file:	          'less' + filename
+ 
+		to display the contents of multiple files:        'less' + filename1 + filename2 
+           	to read the first file:                           'less' + filename1
+		to move to the second file:                       ':e'   + filename2
+		OR
+					                          ':n'
+	                                                          ':p' 
+
+	   	to exit the 'less' cmd:                           'q' 
+
+	2. to go back to the previously visited sub-directory:    'cd' + '-'
