@@ -1,0 +1,107 @@
+============================================================================================
+work at local repo
+============================================================================================
+Cygwin cmd:
+
+   git --vresion
+
+1. git init 
+    >>> .git is crted
+2. git add filename
+
+3. git commit -m "The msg added to the commitment"
+
+4. git status
+
+5. git log
+
+6. to revert an un-committed change to a file:
+	git checkout -- filename
+
+   to revert a committed change to a file:
+	Step 1. 
+		git show 912cc6ed9b799196e0d1da82dab33e1d52dc8d95 ('q' to exit the display)
+	Step 2.
+		git revert 912cc6ed9b799196e0d1da82dab33e1d52dc8d95
+
+		to exit the msg editing while reverting: 
+			ESC + :wq   OR  ESC + :x   OR ESC + zz
+
+	Step 3. to commit the reverting:
+		git commit -m "add a msg"
+
+
+   to get rid of all changes of commits, which is irreversable:
+	git reset -- hard
+
+   to reset one particular commit:
+	git reset 912cc6ed9b799196e0d1da82dab33e1d52dc8d95
+
+
+7. to display the latest git commit:
+	git show -1
+
+8. to dispay all the git activities:
+	git log
+
+9. to see the difference of a certain commit:
+	git diff 912cc6ed9b799196e0d1da82dab33e1d52dc8d95
+ 
+
+10. to set a user name for a git file:
+	git config --global user.name "ABC" 
+
+11. to set an email address for a git file: 
+	git config --global user.email "abc@gamil.com"
+
+12. to ignore certain file in the dir:
+	Step 1: edit .gitignore by: 	vi .gitignore
+	Step 2: add the file name to .gitignore:   *.clas // for all compiled java objects
+	Step 3: git add .gitignore
+	Step 4: git commit -m "addes compiled java objects to .gitignore"
+
+
+
+============================================================================================
+to push local repo to remote repo at Github.com
+============================================================================================
+
+Step 1. crt a remote repo at github.com account
+
+Step 2. cp the link: https://github.com/bpan2/How-to-use-cygwin-vi.git
+
+Step 3.  In Cygwin: 
+		git remote show origin
+
+if msg is: 
+	fatal: 'origin' does not appear to be a git repository
+	fatal: Could not read from remote repository.
+
+	Please make sure you have the correct access rights
+	and the repository exists.
+
+
+Step 4. In Cygwin: 
+		git remote add origin https://github.com/bpan2/How-to-use-cygwin-vi.git
+
+Step 5. In Cygwin:
+		$ git push -u origin master
+
+if msg is:
+	bash: /dev/tty: No such device or address
+	error: failed to execute prompt script (exit code 1)
+	fatal: could not read Username for 'https://github.com': Invalid argument
+
+Step 6. In Cygwin:
+	$ git remote -v
+
+if msg is: 
+	origin  https://github.com/bpan2/How-to-use-cygwin-vi.git (fetch)
+	origin  https://github.com/bpan2/How-to-use-cygwin-vi.git (push)
+
+***** in WINDOWS cmd: *****
+go to the dir. the file is in,
+type:
+	git push -u origin master
+then type in username and password,
+done.
